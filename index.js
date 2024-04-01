@@ -12,11 +12,6 @@ app.get('/',(req,res)=>{
     res.send("home page")
 }) 
 
-app.get('/hello/:a/:b',(req,res)=>{
-    const {a,b} = req.params
-    const sum = parseInt(a)
-    res.json(a+b)
-})
  
 mongoose.connect(process.env.MONGO_URI).then(()=>{
     console.log("connected to db");
