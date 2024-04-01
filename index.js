@@ -1,7 +1,7 @@
 const express = require("express")
 const mongoose = require("mongoose")
 const app = express()
-require('dotenv').config();
+
 app.use(express.json())
 app.use(express.urlencoded({extended:false}))
 const PORT = 3000
@@ -13,7 +13,7 @@ app.get('/',(req,res)=>{
 }) 
 
  
-mongoose.connect(process.env.MONGO_URI).then(()=>{
+mongoose.connect('mongodb+srv://bishnupk888:HdHbJlLghhit3jPh@dbapi.aeovmfi.mongodb.net/').then(()=>{
     console.log("connected to db");
     app.listen(PORT,()=>{
         console.log("server is connected");
